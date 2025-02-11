@@ -15,7 +15,7 @@
         const queryValue = getQueryParam('q');
 
         // Check if the query parameter 'q' is null
-        if (queryValue === null) {
+        if (queryValue === null || queryValue.trim() === "")  {
             // Alert the user to pay the invoice
             alert("Please pay your Invoice first   |   Contact us with any questions (bfdesignstudios@gmail.com)");
             // Redirect to the specified URL
