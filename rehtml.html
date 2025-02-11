@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Query String Redirect</title>
-    <script>
-        // Function to get the value of a query parameter by name
-        function getQueryParam(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Query Parameter</title>
+  <script>
+    // Function to get the value of a query parameter by name
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
 
-        // Get the value of the 'q' query parameter
-        const queryValue = getQueryParam('q');
+    // Get the value of the 'q' query parameter
+    const queryValue = getQueryParam('q');
 
-        // Check if the query parameter 'q' is null
-        if (queryValue === null) {
-            // Alert the user to pay the invoice
-            alert("Please pay Invoice");
-            // Redirect to the specified URL
-            window.location.href = "https://hibid.com";
-        } else {
-            // Redirect to the specified URL
-            window.location.href = "https://bfdesignstudios.zohobookings.ca/#/5334000000034054";
-        }
-    </script>
+    // Check if 'q' is null or empty
+    if (queryValue === null || queryValue.trim() === "") {
+      alert("The query parameter 'q' is either null or has no value.");
+    } else {
+      alert("The query parameter 'q' has a value: " + queryValue);
+    }
+  </script>
 </head>
 <body>
-    <h1>Welcome to the Query String Redirect Page</h1>
-    <p>This page will redirect based on the query string parameter "q".</p>
+  <h1>Query Parameter Check</h1>
+  <p>This page checks if the 'q' query parameter is null or empty.</p>
 </body>
 </html>
